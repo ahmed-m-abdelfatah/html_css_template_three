@@ -2,7 +2,7 @@
 :root {
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
-  --main-transition: 0.3s;
+  --main-transition-duration: 0.3s;
 }
 
 * {
@@ -39,4 +39,5 @@ a {
   }
 }
 
-@import 'sections/_header';
+@import 'sections/header';
+@import 'sections/landing';

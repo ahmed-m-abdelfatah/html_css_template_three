@@ -1,6 +1,6 @@
-/* Header */
-$header-height: 72px;
+@import 'utilities/variables';
 
+/* Header */
 .header {
   background-color: #fff;
   box-shadow: 0 0 10px #ddd;
@@ -44,7 +44,7 @@ $header-height: 72px;
         position: relative;
         color: #000;
         padding: 0 30px;
-        transition: var(--main-transition);
+        transition: var(--main-transition-duration);
         overflow: hidden;
         text-transform: capitalize;
 
@@ -62,7 +62,7 @@ $header-height: 72px;
           background-color: var(--main-color);
           top: 0;
           left: -100%;
-          transition: var(--main-transition);
+          transition: var(--main-transition-duration);
         }
 
         &:hover {
