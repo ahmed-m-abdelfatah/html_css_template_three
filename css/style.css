@@ -159,6 +159,100 @@ a {
   left: 0;
 }
 
+.header .container .main-nav > li > .mega-menu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 30px;
+  background-color: #fff;
+  border-bottom: 3px solid var(--main-color);
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  top: calc(100% + 50px);
+  opacity: 0;
+  -webkit-transition: top var(--main-transition-duration), opacity var(--main-transition-duration);
+  transition: top var(--main-transition-duration), opacity var(--main-transition-duration);
+}
+
+@media (max-width: 767px) {
+  .header .container .main-nav > li > .mega-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header .container .main-nav > li > .mega-menu .image {
+    display: none;
+  }
+}
+
+.header .container .main-nav > li > .mega-menu .image img {
+  max-width: 100%;
+}
+
+.header .container .main-nav > li > .mega-menu ul.links {
+  min-width: 250px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media (max-width: 767px) {
+  .header .container .main-nav > li > .mega-menu ul.links:first-of-type li:last-child {
+    border-bottom: 1px solid #e9e6e6;
+  }
+}
+
+.header .container .main-nav > li > .mega-menu ul.links li {
+  position: relative;
+}
+
+.header .container .main-nav > li > .mega-menu ul.links li:not(:last-child) {
+  border-bottom: 1px solid #e9e6e6;
+}
+
+.header .container .main-nav > li > .mega-menu ul.links li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #fafafa;
+  z-index: -1;
+  -webkit-transition: width var(--main-transition-duration);
+  transition: width var(--main-transition-duration);
+}
+
+.header .container .main-nav > li > .mega-menu ul.links li:hover::before {
+  width: 100%;
+}
+
+.header .container .main-nav > li > .mega-menu ul.links li a {
+  color: var(--main-color);
+  padding: 15px;
+  display: block;
+  font-size: 18px;
+}
+
+.header .container .main-nav > li > .mega-menu ul.links li a i {
+  margin-right: 10px;
+}
+
+.header .container .main-nav > li:last-child:hover .mega-menu {
+  opacity: 1;
+  z-index: 100;
+  top: calc(100% + 1px);
+}
+
 /* Landing */
 .landing {
   position: relative;
