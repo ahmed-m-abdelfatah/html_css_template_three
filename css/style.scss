@@ -39,7 +39,9 @@ a {
   }
 }
 
-@import 'sections/header';
-@import 'sections/landing';
+@import './components/main_title';
 
-@import 'sections/utilities/animations';
+@import './sections/header';
+@import './sections/landing';
+
+@import './sections/utilities/animations';

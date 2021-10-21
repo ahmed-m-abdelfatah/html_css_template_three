@@ -51,6 +51,120 @@ a {
   }
 }
 
+/* main title */
+.main-title {
+  margin: auto;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  font-size: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: var(--main-transition-duration);
+  transition: var(--main-transition-duration);
+}
+
+.main-title:hover {
+  color: #fff;
+  border-color: #fff;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.main-title::before, .main-title::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.main-title::before {
+  left: -30px;
+}
+
+.main-title::after {
+  right: -30px;
+}
+
+.main-title:hover::before {
+  z-index: -1;
+  -webkit-animation: left-move 0.5s linear forwards;
+          animation: left-move 0.5s linear forwards;
+}
+
+.main-title:hover::after {
+  z-index: -1;
+  -webkit-animation: right-move 0.5s linear forwards;
+          animation: right-move 0.5s linear forwards;
+}
+
+@-webkit-keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
 /* Header */
 .header {
   background-color: #fff;
