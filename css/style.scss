@@ -5,6 +5,8 @@
   --main-transition-duration: 0.3s;
   --section-main-padding-top: 100px;
   --section-main-padding-bottom: 100px;
+  --section-background-1: #fff;
+  --section-background-2: #ececec;
 }
 
 * {
@@ -41,10 +43,11 @@ a {
   }
 }
 
-@import './components/main_title';
+@import './components/_main_title.scss';
 
-@import './sections/header';
-@import './sections/landing';
-@import './sections/articles';
+@import './sections/_header.scss';
+@import './sections/_landing.scss';
+@import './sections/_articles.scss';
+@import './sections/_gallery.scss';
 
-@import './sections/utilities/animations';
+@import './sections/utilities/_animations.scss';

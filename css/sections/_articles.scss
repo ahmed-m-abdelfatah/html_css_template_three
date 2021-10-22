@@ -3,6 +3,7 @@
   padding-top: var(--section-main-padding-top);
   padding-bottom: var(--section-main-padding-bottom);
   position: relative;
+  background-color: var(--section-background-1);
 
   .container {
     display: grid;
@@ -21,24 +22,43 @@
         box-shadow: 0 2px 15px rgba($color: #000000, $alpha: 0.2);
       }
 
+      &:hover .info i {
+        animation: moving-arrow 0.6s linear infinite;
+      }
+
       img {
         width: 100%;
         max-width: 100%;
       }
 
       .content {
+        padding: 20px;
+
         h3 {
+          margin: 0;
         }
 
         p {
+          margin: 10px 0 0 0;
+          line-height: 1.5;
+          color: #777;
         }
       }
 
       .info {
+        padding: 20px;
+        border-top: 1px solid #e6e6e7;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         a {
+          color: var(--main-color);
+          font-weight: bold;
         }
 
         i {
+          color: var(--main-color);
         }
       }
     }

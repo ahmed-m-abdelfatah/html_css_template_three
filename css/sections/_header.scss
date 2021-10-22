@@ -1,10 +1,10 @@
 /* Header */
-@import 'utilities/variables';
+@import 'utilities/_variables.scss';
 
 .header {
-  background-color: #fff;
   box-shadow: 0 0 10px #ddd;
   position: relative;
+  background-color: var(--section-background-1);
 
   .container {
     display: flex;
