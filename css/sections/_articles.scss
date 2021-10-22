@@ -1,0 +1,46 @@
+/* Articles */
+.articles {
+  padding-top: var(--section-main-padding-top);
+  padding-bottom: var(--section-main-padding-bottom);
+  position: relative;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+
+    .box {
+      box-shadow: 0 2px 15px rgba($color: #000000, $alpha: 0.1);
+      background-color: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform var(--main-transition-duration), b0x=shadow var(--main-transition-duration);
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 2px 15px rgba($color: #000000, $alpha: 0.2);
+      }
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .content {
+        h3 {
+        }
+
+        p {
+        }
+      }
+
+      .info {
+        a {
+        }
+
+        i {
+        }
+      }
+    }
+  }
+}

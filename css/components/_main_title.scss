@@ -1,6 +1,6 @@
 /* main title */
 .main-title {
-  margin: auto;
+  margin: 0 auto 80px;
   border: 2px solid #000;
   padding: 10px 20px;
   font-size: 30px;
@@ -8,6 +8,7 @@
   position: relative;
   z-index: 1;
   user-select: none;
+  text-transform: capitalize;
   transition: var(--main-transition-duration);
 
   &:hover {
