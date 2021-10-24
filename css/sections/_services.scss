@@ -1,0 +1,94 @@
+/* Services */
+.services {
+  padding-top: var(--section-main-padding-top);
+  padding-bottom: var(--section-main-padding-bottom);
+  background-color: var(--section-background-2);
+  position: relative;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+
+    .box {
+      background-color: #fff;
+      box-shadow: 0 12px 20px 0 rgba($color: #000000, $alpha: 0.13), 0 2px 4px 0 rgba($color: #000000, $alpha: 0.12);
+      counter-increment: services;
+      position: relative;
+      transition: var(--main-transition-duration);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 3px;
+        top: -3px;
+        width: 0;
+        background-color: var(--main-color);
+        transition: var(--main-transition-duration);
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      i {
+        margin: 40px auto 20px;
+        display: block;
+        text-align: center;
+        color: #d5d5d5;
+      }
+
+      h3 {
+        text-align: center;
+        margin: 20px 0 40px;
+        font-size: 25px;
+        color: var(--main-color);
+      }
+
+      .info {
+        padding: 15px;
+        position: relative;
+        background-color: #f9f9f9;
+        text-align: right;
+
+        &::before {
+          content: '0' counter(services);
+          position: absolute;
+          background-color: var(--main-color);
+          color: #fff;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 80px;
+          font-size: 30px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-right: 15px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: #d5d5d5;
+          top: 0;
+          left: 80px;
+          width: 50px;
+          height: 100%;
+          transform: skewX(-30deg);
+        }
+
+        a {
+          color: var(--main-color);
+        }
+      }
+    }
+  }
+}
