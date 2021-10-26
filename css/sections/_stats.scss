@@ -1,0 +1,94 @@
+/* Stats */
+.stats {
+  padding-top: var(--section-main-padding-top);
+  padding-bottom: var(--section-main-padding-bottom);
+  position: relative;
+  background-image: url('../images/stats.jpg'); // location from generated css file
+  background-size: cover;
+  min-height: 300px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #fff, $alpha: 0.95);
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 40px;
+    width: fit-content;
+    margin: 0 auto 50px;
+    position: relative; // show depend on dom tree
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+
+    .box {
+      background-color: #fff;
+      padding: 30px 15px;
+      text-align: center;
+      position: relative;
+      opacity: 0.8;
+      user-select: none;
+      transition: var(--main-transition-duration);
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: var(--main-color);
+        height: 0;
+        transition: var(--main-transition-duration);
+      }
+
+      &::before {
+        top: 0;
+        right: 0;
+      }
+
+      &::after {
+        left: 0;
+        bottom: 0;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      //   Not Working
+      //   &:hover:where(::before, ::after) {
+      //     height: 100%;
+      //   }
+
+      &:hover::before,
+      &:hover::after {
+        height: 100%;
+      }
+
+      i {
+      }
+
+      .number {
+        display: block;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .text {
+        color: var(--main-color);
+        font-style: italic;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}

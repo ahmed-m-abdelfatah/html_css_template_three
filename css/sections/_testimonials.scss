@@ -17,6 +17,16 @@
       border-radius: 6px;
       position: relative;
 
+      @media (max-width: 767px) {
+        &:nth-child(even) {
+          transform: rotateZ(3deg);
+        }
+
+        &:nth-child(odd) {
+          transform: rotateZ(-3deg);
+        }
+      }
+
       img {
         position: absolute;
         right: -10px;
