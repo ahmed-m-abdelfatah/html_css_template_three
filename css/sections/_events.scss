@@ -51,6 +51,9 @@
               padding: 15px;
               color: var(--main-color);
               font-weight: bold;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
 
             &:last-child {
