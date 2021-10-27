@@ -1,3 +1,4 @@
+// Counter
 const counters = document.querySelectorAll('.stats .container .box .number');
 const videosSection = document.querySelector('.videos');
 
@@ -28,4 +29,11 @@ counters.forEach((counter, index) => {
       window.removeEventListener('scroll', ScrollTrigger);
     }
   }
+});
+
+// autocomplete="off"
+const inputs = document.querySelectorAll('.input');
+
+inputs.forEach(element => {
+  element.setAttribute('autocomplete', 'off');
 });
