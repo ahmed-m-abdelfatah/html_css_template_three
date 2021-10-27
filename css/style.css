@@ -170,6 +170,46 @@ a {
   }
 }
 
+/* Spikes */
+.spikes {
+  position: relative;
+}
+
+.spikes::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 30px;
+  z-index: 1;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+.dots {
+  background-image: url("../images/dots.png");
+  height: 186px;
+  width: 204px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.dots.dots-up {
+  top: 200px;
+  right: 0;
+}
+
+.dots.dots-down {
+  bottom: 200px;
+  left: 0;
+}
+
+@media (max-width: 991px) {
+  .dots {
+    display: none;
+  }
+}
+
 /* Header */
 .header {
   -webkit-box-shadow: 0 0 10px #ddd;
@@ -1340,6 +1380,7 @@ a {
 
 .events .container img {
   max-width: 450px;
+  z-index: 1;
 }
 
 @media (max-width: 991px) {
@@ -1377,6 +1418,8 @@ a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background-color: #fff;
+  z-index: 1;
   -webkit-transition: var(--main-transition-duration);
   transition: var(--main-transition-duration);
 }
@@ -1578,6 +1621,13 @@ a {
 
 .pricing .container .box:hover::before, .pricing .container .box:hover::after {
   width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .pricing .container .box:hover {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
 }
 
 @media (min-width: 1200px) {

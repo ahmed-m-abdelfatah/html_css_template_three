@@ -45,6 +45,12 @@
       }
 
       @media (min-width: 1200px) {
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+
+      @media (min-width: 1200px) {
         &.popular {
           top: -20px;
         }
