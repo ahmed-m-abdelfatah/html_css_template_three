@@ -843,12 +843,12 @@ a {
 
 @media (max-width: 767px) {
   .testimonials .container .box:nth-child(even) {
-    -webkit-transform: rotateZ(3deg);
-            transform: rotateZ(3deg);
+    -webkit-transform: scale(0.9) rotateZ(3deg);
+            transform: scale(0.9) rotateZ(3deg);
   }
   .testimonials .container .box:nth-child(odd) {
-    -webkit-transform: rotateZ(-3deg);
-            transform: rotateZ(-3deg);
+    -webkit-transform: scale(0.9) rotateZ(-3deg);
+            transform: scale(0.9) rotateZ(-3deg);
   }
 }
 
@@ -1241,6 +1241,8 @@ a {
   top: 0;
   height: 100%;
   background-color: var(--main-color);
+  -webkit-transition: var(--main-transition-duration);
+  transition: var(--main-transition-duration);
 }
 
 /* Work Steps */

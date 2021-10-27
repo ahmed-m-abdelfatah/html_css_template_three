@@ -19,11 +19,12 @@
 
       @media (max-width: 767px) {
         &:nth-child(even) {
-          transform: rotateZ(3deg);
+          // scale to remove scroll horizontal in mobile
+          transform: scale(0.9) rotateZ(3deg);
         }
 
         &:nth-child(odd) {
-          transform: rotateZ(-3deg);
+          transform: scale(0.9) rotateZ(-3deg);
         }
       }
 

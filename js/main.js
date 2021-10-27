@@ -1,4 +1,4 @@
-// Counter
+// counter =========================================================================================
 const counters = document.querySelectorAll('.stats .container .box .number');
 const videosSection = document.querySelector('.videos');
 
@@ -31,14 +31,14 @@ counters.forEach((counter, index) => {
   }
 });
 
-// autocomplete="off"
+// autocomplete="off" ==============================================================================
 const inputs = document.querySelectorAll('.input');
 
 inputs.forEach(element => {
   element.setAttribute('autocomplete', 'off');
 });
 
-// count down
+// count down ======================================================================================
 let countDownDate = new Date('Dec 31, 2023 23:59:59').getTime();
 
 let counter = setInterval(() => {
@@ -64,3 +64,18 @@ let counter = setInterval(() => {
     clearInterval(counter);
   }
 }, 1000);
+
+// progress animation ==============================================================================
+let section = document.querySelector('.our-skills');
+let progressSpans = document.querySelectorAll('.the-progress span');
+
+window.onscroll = function () {
+  if (window.scrollY >= section.offsetTop + 100) {
+    progressSpans.forEach(span => {
+      // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
+      // console.log(span.dataset.width);
+      // console.log(span.getAttribute('data-width'));
+      span.style.width = span.dataset.width;
+    });
+  }
+};

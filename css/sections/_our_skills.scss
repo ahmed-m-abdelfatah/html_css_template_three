@@ -44,6 +44,7 @@
             top: 0;
             height: 100%;
             background-color: var(--main-color);
+            transition: var(--main-transition-duration);
           }
         }
       }
