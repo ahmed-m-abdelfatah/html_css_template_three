@@ -1,38 +1,56 @@
 // counter =========================================================================================
-const counters = document.querySelectorAll('.stats .container .box .number');
-const videosSection = document.querySelector('.videos');
+let statsSection = document.querySelector('.stats');
+let counters = document.querySelectorAll('.stats .container .box .number');
 
-counters.forEach((counter, index) => {
-  counter.textContent = '0';
-
-  const updateCounter = () => {
-    // + to number
-    // https://stackoverflow.com/a/1133814/16107539
-    const target = +counter.getAttribute('data-target');
-    const nowCounterNumber = +counter.textContent;
-    const increment = target / 600;
-
-    if (nowCounterNumber < target) {
-      counter.textContent = `${Math.ceil(nowCounterNumber + increment)}`;
-      setTimeout(updateCounter, 1);
-    } else {
-      counter.textContent =
-        target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + `${index == counters.length - 1 ? 'K' : ''}`;
+let started = false;
+window.onscroll = function () {
+  if (window.scrollY >= statsSection.offsetTop - 300) {
+    if (!started) {
+      counters.forEach(counter => startCount(counter));
     }
-  };
-
-  window.addEventListener('scroll', ScrollTrigger);
-
-  function ScrollTrigger() {
-    if (this.scrollY >= videosSection.offsetTop + 600) {
-      updateCounter();
-      window.removeEventListener('scroll', ScrollTrigger);
-    }
+    started = true;
   }
-});
+};
+
+function startCount(el) {
+  let target = el.dataset.target;
+  let count = setInterval(() => {
+    el.textContent++;
+    if (el.textContent == target) {
+      clearInterval(count);
+    }
+  }, 2000 / target);
+}
+
+// counters.forEach((counter, index) => {
+//   window.addEventListener('scroll', ScrollTrigger);
+
+//   function ScrollTrigger() {
+//     if (window.scrollY >= statsSection.offsetTop - 150) {
+//       updateCounter();
+//       window.removeEventListener('scroll', ScrollTrigger);
+//     }
+//   }
+
+//   function updateCounter() {
+//     // + to number
+//     // https://stackoverflow.com/a/1133814/16107539
+//     let target = +counter.dataset.target;
+//     let nowCounterNumber = +counter.textContent;
+//     let increment = target / 600;
+
+//     if (nowCounterNumber < target) {
+//       counter.textContent = `${Math.ceil(nowCounterNumber + increment)}`;
+//       setTimeout(updateCounter, 1);
+//     } else {
+//       counter.textContent =
+//         target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + `${index == counters.length - 1 ? 'K' : ''}`;
+//     }
+//   }
+// });
 
 // autocomplete="off" ==============================================================================
-const inputs = document.querySelectorAll('.input');
+let inputs = document.querySelectorAll('.input');
 
 inputs.forEach(element => {
   element.setAttribute('autocomplete', 'off');
@@ -70,7 +88,7 @@ let section = document.querySelector('.our-skills');
 let progressSpans = document.querySelectorAll('.the-progress span');
 
 window.onscroll = function () {
-  if (window.scrollY >= section.offsetTop + 100) {
+  if (window.scrollY >= section.offsetTop + 50) {
     progressSpans.forEach(span => {
       // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
       // console.log(span.dataset.width);
