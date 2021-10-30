@@ -45,6 +45,21 @@
             height: 100%;
             background-color: var(--main-color);
             transition: var(--main-transition-duration);
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 0;
+              background-color: var(--main-color-alt);
+              height: 100%;
+              transition: var(--main-transition-duration);
+            }
+
+            &:hover::before {
+              width: 100%;
+            }
           }
         }
       }

@@ -1245,6 +1245,22 @@ a {
   transition: var(--main-transition-duration);
 }
 
+.our-skills .container .skills .skill .the-progress span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  background-color: var(--main-color-alt);
+  height: 100%;
+  -webkit-transition: var(--main-transition-duration);
+  transition: var(--main-transition-duration);
+}
+
+.our-skills .container .skills .skill .the-progress span:hover::before {
+  width: 100%;
+}
+
 /* Work Steps */
 .work-steps {
   padding-top: var(--section-main-padding-top);
